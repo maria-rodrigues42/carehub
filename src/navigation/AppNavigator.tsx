@@ -14,6 +14,7 @@ import HomeTela from '../telas/HomeTela';
 import TarefasTela from '../telas/TarefasTela';
 import RemediosTela from '../telas/RemediosTela';
 import ConteudoTela from '../telas/ConteudoTela';
+import PerfilTela from '../telas/PerfilTela';
 
 type ScreenName = 'Início' | 'Tarefas' | 'Remedios' | 'Artigos' | 'Perfil';
 
@@ -37,8 +38,8 @@ const AppNavigator: React.FC = () => {
         return <RemediosTela />;
       case 'Artigos':
         return <ConteudoTela />;
-      //case 'Perfil':
-        //return <ProfileScreen />;
+      case 'Perfil':
+        return <PerfilTela />;
       default:
         return <HomeTela />; // Tela padrão caso algo dê errado.
     }
@@ -59,28 +60,28 @@ const AppNavigator: React.FC = () => {
         {/* O 'onPress' chama a função 'setActiveScreen' para mudar a memória e, consequentemente, a tela. */}
         {/* A cor do ícone muda se a tela dele estiver ativa. */}
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Início')}>
-          <Home color={activeScreen === 'Início' ? Cores.primaria : Cores.textoSecundario} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Início' ? Cores.primaria : Cores.textoSecundario }]}>Início</Text>
+          <Home color={activeScreen === 'Início' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Início' ? Cores.primaria : Cores.preto }]}>Início</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Agenda')}>
-          <NotepadText color={activeScreen === 'Agenda' ? Cores.primaria : Cores.textoSecundario} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Agenda' ? Cores.primaria : Cores.textoSecundario }]}>Tarefas</Text>
+        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Tarefas')}>
+          <NotepadText color={activeScreen === 'Tarefas' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Tarefas' ? Cores.primaria : Cores.preto }]}>Tarefas</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Buscar')}>
-          <Pill color={activeScreen === 'Buscar' ? Cores.primaria : Cores.textoSecundario} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Buscar' ? Cores.primaria : Cores.textoSecundario }]}>Remedios</Text>
+        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Remedios')}>
+          <Pill color={activeScreen === 'Remedios' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Remedios' ? Cores.primaria : Cores.preto }]}>Remedios</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Artigos')}>
-          <Newspaper color={activeScreen === 'Artigos' ? Cores.primaria : Cores.textoSecundario} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Artigos' ? Cores.primaria : Cores.textoSecundario }]}>Artigos</Text>
+          <Newspaper color={activeScreen === 'Artigos' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Artigos' ? Cores.primaria : Cores.preto }]}>Artigos</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Perfil')}>
-          <User color={activeScreen === 'Perfil' ? Cores.primaria : Cores.textoSecundario} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Perfil' ? Cores.primaria : Cores.textoSecundario }]}>Pessoas</Text>
+          <User color={activeScreen === 'Perfil' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Perfil' ? Cores.primaria : Cores.preto }]}>Pessoas</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     borderTopWidth: 1,
     borderTopColor: Cores.destaque,
-    paddingBottom: 5vh,
+    marginBottom: 50
   },
   botaoNav: {
     flex: 1,

@@ -5,7 +5,7 @@ interface PaletaCores{
     secundaria: string;
     destaque: string;
     fundo: string;
-    Preto: string;
+    preto: string;
     branco: string;
 
 }
@@ -17,7 +17,7 @@ export const Cores: PaletaCores = {
     secundaria: '#38a2a3',
     destaque: '#5838a3',
     fundo: '#c7f9cc',
-    Preto: '#000000',
+    preto: '#000000',
     branco: '#ffffff',
 
 };
