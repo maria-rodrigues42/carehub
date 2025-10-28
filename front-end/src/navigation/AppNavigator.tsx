@@ -11,9 +11,9 @@ import { Home, NotepadText, Pill, Newspaper, User } from 'lucide-react-native';
 // Importamos nossas cores, ícones e, o mais importante, todas as telas que criamos.
 import { Cores } from '../constantes/Cores';
 import HomeTela from '../telas/HomeTela';
-import TarefasTela from '../telas/TarefasTela';
-import RemediosTela from '../telas/RemediosTela';
-import ConteudoTela from '../telas/ConteudoTela';
+import { TarefasTela } from '../telas/TarefasTela';
+import { RemediosTela } from '../telas/RemediosTela';
+import { ConteudoTela } from '../telas/ConteudoTela';
 
 type ScreenName = 'Início' | 'Tarefas' | 'Remedios' | 'Artigos' | 'Perfil';
 
@@ -47,7 +47,7 @@ const AppNavigator: React.FC = () => {
       <View style={styles.barraNavegacao}>
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Início')}>
           <Home color={activeScreen === 'Início' ? Cores.primaria : Cores.primaria} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Início' ? Cores.primaria : Cores.textoSecundario }]}>Início</Text>
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Início' ? Cores.primaria : Cores.primaria }]}>Início</Text>
         </TouchableOpacity>
 
         {/* Corrigido: usar 'Tarefas' (existente em ScreenName) */}
