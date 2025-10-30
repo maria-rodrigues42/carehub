@@ -9,7 +9,7 @@ export const Styles = StyleSheet.create({
   // Estilo principal da tela
   screenContainer: {
     flex: 1,
-    backgroundColor: Cores.fundo,
+    backgroundColor: Cores.branco,
   },
 
   // --- Estilos do Cabeçalho (Header) ---
@@ -135,5 +135,42 @@ export const Styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 14,
   },
+
+  textoNormal:{
+    color: Cores.preto,
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+
+  //--------------tela remedios
+
+  //view da data d remedio
+  viewData: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 30
+  },
+
+  cardRemedioText:{
+    flex:1,
+    flexDirection: "column",
+
+  },
+
+  cardRemedio:{
+    flex:1,
+    flexDirection: "row",
+    gap: 15,
+    padding: 20,
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: Cores.secundaria,
+    margin: 15,
+    backgroundColor: Cores.fundo
+
+  }
 });
 

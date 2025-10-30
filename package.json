@@ -6,9 +6,12 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "expo lint",
+    "vercel-build": "expo export"
   },
   "dependencies": {
+    "@futurejj/react-native-checkbox": "^1.0.5",
     "expo": "~54.0.13",
     "expo-image": "~3.0.10",
     "expo-status-bar": "~3.0.8",

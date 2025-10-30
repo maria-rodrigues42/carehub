@@ -8,10 +8,9 @@ export const styles = StyleSheet.create({
   pageContainer: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
-    padding:15,
+    justifyContent: 'center',                                                                                               
     
-    backgroundColor: Cores.destaque,
+    backgroundColor: Cores.branco,
 
   },
   headerImage: {

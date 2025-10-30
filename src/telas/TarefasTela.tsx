@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Button, TouchableOpacity, ImageBackground, ScrollView} from 'react-native';
+import { Checkbox } from '@futurejj/react-native-checkbox';
+
 
 import { Menu, Percent, Truck, CalendarClock, Camera, PlusCircle, ArrowLeft, ArrowRight } from 'lucide-react-native';
 
@@ -15,7 +17,7 @@ const TarefasTela: React.FC = function(){
       <TouchableOpacity>
         <Menu color={Cores.primaria} />
       </TouchableOpacity>
-      <Text style={Styles.headerTitle}>Remedios</Text>
+      <Text style={Styles.headerTitle}>Tarefas</Text>
       <View style={{ width: 28 }} />
     </View>
   );
@@ -29,59 +31,36 @@ const TarefasTela: React.FC = function(){
     </View>
   )
 
-  // Componente para o banner principal (Clube CareHub)
-  const CardListaRemedio = () => (
-    <View style={Styles.clubeCardContainer}>
-      <ImageBackground
-        source={{ uri: 'https://images.unsplash.com/photo-1576765608866-5b518682c379?q=80&w=1974&auto=format&fit=crop' }}
-        style={Styles.clubeCardBackground}
-        imageStyle={{ borderRadius: 16 }}
-      >
-        <View style={Styles.clubeCardOverlay}>
-          <Text style={Styles.clubeCardTitle}>CLUBE CAREHUB</Text>
-          <Text style={Styles.clubeCardSubtitle}>MAIS PRATICIDADE E ECONOMIA PARA VOCÊ!</Text>
-          <TouchableOpacity style={Styles.clubeCardButton}>
-            <Text style={Styles.clubeCardButtonText}>ATIVE AGORA E APROVEITE</Text>
-          </TouchableOpacity>
-          <View style={Styles.clubeFeaturesContainer}>
-            <View style={Styles.featureItem}>
-              <Percent color={Cores.branco} size={18} />
-              <Text style={Styles.featureText}>Descontos exclusivos</Text>
-            </View>
-            <View style={Styles.featureItem}>
-              <Truck color={Cores.branco} size={18} />
-              <Text style={Styles.featureText}>Frete grátis parceiro</Text>
-            </View>
-            <View style={Styles.featureItem}>
-              <CalendarClock color={Cores.branco} size={18} />
-              <Text style={Styles.featureText}>Receba com recorrência</Text>
-            </View>
-          </View>
-        </View>
-      </ImageBackground>
-    </View>
-  );
+  
+
+    //use state para se tiver remedios
+  const [temRemedio, setRemedio] = useState(0);
+
+  if(temRemedio){
+    var titulo = "Medicamentos para Hoje";
+  }else{
+    var titulo = "Nao ha Medicamentos para hoje";
+  }
+
 
    // Componente para o cabeçalho de uma seção
   const SectionHeader = ({ title }: { title: string }) => (
     <View style={Styles.sectionHeaderContainer}>
       <Text style={Styles.sectionTitle}>{title}</Text>
-      <TouchableOpacity>
-        <Camera color={Cores.secundaria} size={24} />
-      </TouchableOpacity>
+      
     </View>
   );
 
-  // Componente para o card de "estado vazio"
-  const EmptyMedicationCard = () => (
-    <View style={Styles.emptyCard}>
-        <Text style={Styles.emptyCardText}>Sem cuidados para exibir</Text>
-        <TouchableOpacity style={Styles.emptyCardButton}>
-            <PlusCircle color={Cores.primaria} size={18} style={{marginRight: 8}}/>
-            <Text style={Styles.emptyCardButtonText}>Cadastrar Cuidado</Text>
-        </TouchableOpacity>
+  // Componente para o banner principal (Clube CareHub)
+  const CardListaRemedio = () => (
+    <View style={Styles.clubeCardContainer}>
+    <Text>{hora_remedio}</Text>
+    <Text>{nome_remedio}</Text>
+
     </View>
   );
+
+  
 
 
     return(
@@ -89,8 +68,8 @@ const TarefasTela: React.FC = function(){
             <Header />
             <CardData />
             <CardListaRemedio />
-            <SectionHeader title="Próximos Cuidados" />
-            <EmptyMedicationCard />
+            <SectionHeader title={titulo} />
+            
         </ScrollView>
     );
 

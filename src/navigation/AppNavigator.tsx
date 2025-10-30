@@ -102,9 +102,9 @@ const styles = StyleSheet.create({
     height: 70,
     backgroundColor: Cores.branco,
     justifyContent: 'space-around',
-    borderTopWidth: 1,
-    borderTopColor: Cores.destaque,
-    marginBottom: 50
+    borderTopWidth: 0,
+    borderTopColor: Cores.secundaria,
+    marginBottom: 0
   },
   botaoNav: {
     flex: 1,
