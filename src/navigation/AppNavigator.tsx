@@ -5,7 +5,7 @@
  */
 import React, { useState } from 'react';
 import { StyleSheet, View, SafeAreaView, Text, TouchableOpacity } from 'react-native';
-import { Home, NotepadText, Pill, Newspaper, User } from 'lucide-react-native';
+import { Home, NotepadText, Pill, Newspaper, Album } from 'lucide-react-native';
 
 // 1. IMPORTAÇÃO DE TODAS AS PEÇAS
 // Importamos nossas cores, ícones e, o mais importante, todas as telas que criamos.
@@ -14,9 +14,9 @@ import HomeTela from '../telas/HomeTela';
 import TarefasTela from '../telas/TarefasTela';
 import RemediosTela from '../telas/RemediosTela';
 import ConteudoTela from '../telas/ConteudoTela';
-import PerfilTela from '../telas/PerfilTela';
+import DiarioTela from '../telas/DiarioTela';
 
-type ScreenName = 'Início' | 'Tarefas' | 'Remedios' | 'Artigos' | 'Perfil';
+type ScreenName = 'Início' | 'Tarefas' | 'Remedios' | 'Artigos' | 'Diario';
 
 const AppNavigator: React.FC = () => {
   // 2. A MEMÓRIA DO COMPONENTE (useState)
@@ -38,8 +38,8 @@ const AppNavigator: React.FC = () => {
         return <RemediosTela />;
       case 'Artigos':
         return <ConteudoTela />;
-      case 'Perfil':
-        return <PerfilTela />;
+      case 'Diario':
+        return <DiarioTela />;
       default:
         return <HomeTela />; // Tela padrão caso algo dê errado.
     }
@@ -80,8 +80,8 @@ const AppNavigator: React.FC = () => {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Perfil')}>
-          <User color={activeScreen === 'Perfil' ? Cores.primaria : Cores.preto} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Perfil' ? Cores.primaria : Cores.preto }]}>Pessoas</Text>
+          <Album color={activeScreen === 'Diario' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Diario' ? Cores.primaria : Cores.preto }]}>Diario</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

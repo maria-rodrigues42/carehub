@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, TouchableOpacity, ImageBackground, ScrollView} from 'react-native';
 import { Checkbox } from '@futurejj/react-native-checkbox';
+import { Plus } from 'lucide-react-native';
 
 
 import { Menu, Percent, Truck, CalendarClock, Camera, PlusCircle, ArrowLeft, ArrowRight } from 'lucide-react-native';
@@ -72,15 +73,23 @@ const RemediosTela: React.FC = function(){
     </View>
   );
 
+  const ButtonAddRemedio = () =>(
+    <TouchableOpacity style={Styles.plusButton}>
+      <Plus size={35}/>
+    </TouchableOpacity>
+  )
+
   
 
 
     return(
-        <ScrollView style={Styles.screenContainer} showsVerticalScrollIndicator={false}>
+        <ScrollView style={Styles.screenContainer} >
+          
             <Header />
             <CardData />
             <SectionHeader title={titulo} />
-            <CardListaRemedio />
+          
+            <ButtonAddRemedio />
             
         </ScrollView>
     );

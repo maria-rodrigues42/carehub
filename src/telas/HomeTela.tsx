@@ -83,7 +83,6 @@ const Home: React.FC = function(){
     return(
         <ScrollView style={Styles.screenContainer} showsVerticalScrollIndicator={false}>
         <Header />
-        <ClubeCareHubCard />
         <SectionHeader title="Próximos Cuidados" />
         <EmptyMedicationCard />
         </ScrollView>

@@ -10,6 +10,7 @@ export const Styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
     backgroundColor: Cores.branco,
+    height: 720
   },
 
   // --- Estilos do Cabeçalho (Header) ---
@@ -171,6 +172,22 @@ export const Styles = StyleSheet.create({
     margin: 15,
     backgroundColor: Cores.fundo
 
+  },
+  
+  plusButton:{
+    position: "absolute",
+    backgroundColor: Cores.primaria,
+    borderRadius: 50,
+    padding: 10,
+    width: 55,
+    //posicao absoluta
+    right: 15,
+    bottom: -500
+    
   }
+
+
+
+
 });
 

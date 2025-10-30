@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, TouchableOpacity, ImageBackground, ScrollView} from 'react-native';
 import { Checkbox } from '@futurejj/react-native-checkbox';
+import { Plus } from 'lucide-react-native';
 
 
 import { Menu, Percent, Truck, CalendarClock, Camera, PlusCircle, ArrowLeft, ArrowRight } from 'lucide-react-native';
@@ -34,12 +35,12 @@ const TarefasTela: React.FC = function(){
   
 
     //use state para se tiver remedios
-  const [temRemedio, setRemedio] = useState(0);
+  const [temTarefas, setTarefas] = useState(0);
 
-  if(temRemedio){
-    var titulo = "Medicamentos para Hoje";
+  if(temTarefas){
+    var titulo = "Tarefas para Hoje";
   }else{
-    var titulo = "Nao ha Medicamentos para hoje";
+    var titulo = "Nao ha Tarefas para hoje";
   }
 
 
@@ -51,15 +52,12 @@ const TarefasTela: React.FC = function(){
     </View>
   );
 
-  // Componente para o banner principal (Clube CareHub)
-  const CardListaRemedio = () => (
-    <View style={Styles.clubeCardContainer}>
-    <Text>{hora_remedio}</Text>
-    <Text>{nome_remedio}</Text>
 
-    </View>
-  );
-
+  const ButtonAddRemedio = () =>(
+    <TouchableOpacity style={Styles.plusButton}>
+      <Plus size={35}/>
+    </TouchableOpacity>
+  )
   
 
 
@@ -67,8 +65,8 @@ const TarefasTela: React.FC = function(){
         <ScrollView style={Styles.screenContainer} showsVerticalScrollIndicator={false}>
             <Header />
             <CardData />
-            <CardListaRemedio />
             <SectionHeader title={titulo} />
+            <ButtonAddRemedio />
             
         </ScrollView>
     );
