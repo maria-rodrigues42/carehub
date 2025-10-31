@@ -1,11 +1,11 @@
 
 import React, {useState} from 'react'; // importamos o React pois estamos usando a sintaxe para typescypt xml, ai la tem tudo certinho pro programa entender
-import AppNavigator from './src/navigation/AppNavigator';
+import AppNavigator from './front-end/src/navigation/AppNavigator';
 //nosso navegador entre as telas do nosso aplicativo 
 //ele e como um seletor da tela q vai ficar ativa
 
-import OnboardingFlow from './src/telas/BoasVindas';
-import {styles} from './src/style/BoasVindasStyle'
+import OnboardingFlow from './front-end/src/telas/BoasVindas';
+import {styles} from './front-end/src/style/BoasVindasStyle'
 import {StyleSheet} from 'react-native';
 import {
   SafeAreaView,
