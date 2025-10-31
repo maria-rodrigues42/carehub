@@ -5,17 +5,24 @@
  */
 import React, { useState } from 'react';
 import { StyleSheet, View, SafeAreaView, Text, TouchableOpacity } from 'react-native';
-import { Home, NotepadText, Pill, Newspaper, User } from 'lucide-react-native';
+import { Home, NotepadText, Pill, Newspaper, Album } from 'lucide-react-native';
 
 // 1. IMPORTAÇÃO DE TODAS AS PEÇAS
 // Importamos nossas cores, ícones e, o mais importante, todas as telas que criamos.
 import { Cores } from '../constantes/Cores';
 import HomeTela from '../telas/HomeTela';
+<<<<<<< HEAD
 import { TarefasTela } from '../telas/TarefasTela';
 import { RemediosTela } from '../telas/RemediosTela';
 import { ConteudoTela } from '../telas/ConteudoTela';
+=======
+import TarefasTela from '../telas/TarefasTela';
+import RemediosTela from '../telas/RemediosTela';
+import ConteudoTela from '../telas/ConteudoTela';
+import DiarioTela from '../telas/DiarioTela';
+>>>>>>> master
 
-type ScreenName = 'Início' | 'Tarefas' | 'Remedios' | 'Artigos' | 'Perfil';
+type ScreenName = 'Início' | 'Tarefas' | 'Remedios' | 'Artigos' | 'Diario';
 
 const AppNavigator: React.FC = () => {
   // 2. A MEMÓRIA DO COMPONENTE (useState)
@@ -32,6 +39,11 @@ const AppNavigator: React.FC = () => {
         return <RemediosTela />;
       case 'Artigos':
         return <ConteudoTela />;
+<<<<<<< HEAD
+=======
+      case 'Diario':
+        return <DiarioTela />;
+>>>>>>> master
       default:
         return <HomeTela />;
     }
@@ -46,6 +58,7 @@ const AppNavigator: React.FC = () => {
 
       <View style={styles.barraNavegacao}>
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Início')}>
+<<<<<<< HEAD
           <Home color={activeScreen === 'Início' ? Cores.primaria : Cores.primaria} />
           <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Início' ? Cores.primaria : Cores.primaria }]}>Início</Text>
         </TouchableOpacity>
@@ -70,6 +83,30 @@ const AppNavigator: React.FC = () => {
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Perfil')}>
           <User color={activeScreen === 'Perfil' ? Cores.primaria : Cores.primaria} />
           <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Perfil' ? Cores.primaria : Cores.primaria }]}>Perfil</Text>
+=======
+          <Home color={activeScreen === 'Início' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Início' ? Cores.primaria : Cores.preto }]}>Início</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Tarefas')}>
+          <NotepadText color={activeScreen === 'Tarefas' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Tarefas' ? Cores.primaria : Cores.preto }]}>Tarefas</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Remedios')}>
+          <Pill color={activeScreen === 'Remedios' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Remedios' ? Cores.primaria : Cores.preto }]}>Remedios</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Artigos')}>
+          <Newspaper color={activeScreen === 'Artigos' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Artigos' ? Cores.primaria : Cores.preto }]}>Artigos</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Perfil')}>
+          <Album color={activeScreen === 'Diario' ? Cores.primaria : Cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Diario' ? Cores.primaria : Cores.preto }]}>Diario</Text>
+>>>>>>> master
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -90,9 +127,15 @@ const styles = StyleSheet.create({
     height: 70,
     backgroundColor: Cores.branco,
     justifyContent: 'space-around',
+<<<<<<< HEAD
     borderTopWidth: 1,
     borderTopColor: Cores.destaque,
     paddingBottom: 8, // substituído 5vh por valor numérico válido
+=======
+    borderTopWidth: 0,
+    borderTopColor: Cores.secundaria,
+    marginBottom: 0
+>>>>>>> master
   },
   botaoNav: {
     flex: 1,
