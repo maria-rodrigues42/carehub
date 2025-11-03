@@ -5,7 +5,7 @@ import AppNavigator from './src/navigation/AppNavigator';
 //ele e como um seletor da tela q vai ficar ativa
 
 import OnboardingFlow from './src/telas/BoasVindas';
-import {styles} from './src/style/BoasVindasStyle'
+import {styles} from './src/style/boasVindasStyle'
 import {StyleSheet} from 'react-native';
 import {
   SafeAreaView,

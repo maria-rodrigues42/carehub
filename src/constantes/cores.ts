@@ -12,7 +12,7 @@ interface PaletaCores{
 
 //agora vamos exportar o obejto para os outros arquivopds poderem acessar ele
 //funcao construtora
-export const Cores: PaletaCores = {
+export const cores: PaletaCores = {
     primaria: '#57CC99',
     secundaria: '#38a2a3',
     destaque: '#5838a3',

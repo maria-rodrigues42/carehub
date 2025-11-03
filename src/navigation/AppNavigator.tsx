@@ -1,4 +1,4 @@
-/**
+/**styles
  * AppNavigator.tsx
  *
  * Gerencia a navegação principal (barra de abas) e renderiza a tela ativa.
@@ -9,7 +9,7 @@ import { Home, NotepadText, Pill, Newspaper, Album } from 'lucide-react-native';
 
 // 1. IMPORTAÇÃO DE TODAS AS PEÇAS
 // Importamos nossas cores, ícones e, o mais importante, todas as telas que criamos.
-import { Cores } from '../constantes/Cores';
+import { cores } from '../constantes/cores';
 import HomeTela from '../telas/HomeTela';
 import TarefasTela from '../telas/TarefasTela';
 import RemediosTela from '../telas/RemediosTela';
@@ -60,28 +60,28 @@ const AppNavigator: React.FC = () => {
         {/* O 'onPress' chama a função 'setActiveScreen' para mudar a memória e, consequentemente, a tela. */}
         {/* A cor do ícone muda se a tela dele estiver ativa. */}
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Início')}>
-          <Home color={activeScreen === 'Início' ? Cores.primaria : Cores.preto} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Início' ? Cores.primaria : Cores.preto }]}>Início</Text>
+          <Home color={activeScreen === 'Início' ? cores.primaria : cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Início' ? cores.primaria : cores.preto }]}>Início</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Tarefas')}>
-          <NotepadText color={activeScreen === 'Tarefas' ? Cores.primaria : Cores.preto} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Tarefas' ? Cores.primaria : Cores.preto }]}>Tarefas</Text>
+          <NotepadText color={activeScreen === 'Tarefas' ? cores.primaria : cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Tarefas' ? cores.primaria : cores.preto }]}>Tarefas</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Remedios')}>
-          <Pill color={activeScreen === 'Remedios' ? Cores.primaria : Cores.preto} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Remedios' ? Cores.primaria : Cores.preto }]}>Remedios</Text>
+          <Pill color={activeScreen === 'Remedios' ? cores.primaria : cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Remedios' ? cores.primaria : cores.preto }]}>Remedios</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Artigos')}>
-          <Newspaper color={activeScreen === 'Artigos' ? Cores.primaria : Cores.preto} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Artigos' ? Cores.primaria : Cores.preto }]}>Artigos</Text>
+          <Newspaper color={activeScreen === 'Artigos' ? cores.primaria : cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Artigos' ? cores.primaria : cores.preto }]}>Artigos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Perfil')}>
-          <Album color={activeScreen === 'Diario' ? Cores.primaria : Cores.preto} />
-          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Diario' ? Cores.primaria : Cores.preto }]}>Diario</Text>
+        <TouchableOpacity style={styles.botaoNav} onPress={() => setActiveScreen('Diario')}>
+          <Album color={activeScreen === 'Diario' ? cores.primaria : cores.preto} />
+          <Text style={[styles.textoBotaoNav, { color: activeScreen === 'Diario' ? cores.primaria : cores.preto }]}>Diario</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -92,7 +92,7 @@ const AppNavigator: React.FC = () => {
 const styles = StyleSheet.create({
   containerPrincipal: {
     flex: 1,
-    backgroundColor: Cores.fundo,
+    backgroundColor: cores.fundo,
   },
   conteudoDaTela: {
     flex: 1,
@@ -100,10 +100,10 @@ const styles = StyleSheet.create({
   barraNavegacao: {
     flexDirection: 'row',
     height: 70,
-    backgroundColor: Cores.branco,
+    backgroundColor: cores.branco,
     justifyContent: 'space-around',
     borderTopWidth: 0,
-    borderTopColor: Cores.secundaria,
+    borderTopColor: cores.secundaria,
     marginBottom: 0
   },
   botaoNav: {

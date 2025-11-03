@@ -1,0 +1,10 @@
+banco de dados do carehub
+mariaDB
+
+CREATE USER 'carehub_user'@'localhost' IDENTIFIED BY 'hubcare1234';
+
+usuario
+carehub_user
+
+senha
+hubcare1234

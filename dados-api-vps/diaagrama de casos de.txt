@@ -1,0 +1,10 @@
+diaagrama de casos de uso
+requisitosb do sistema
+relacionamento de tabela do banco de dados
+
+cadastro e login
+gerenciamento de tarefas
+gerenciamento de medicamentos
+artigos
+cadastro de perfis
+aba de busca de cuidadores

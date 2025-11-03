@@ -7,8 +7,8 @@ import { Plus } from 'lucide-react-native';
 import { Menu, Percent, Truck, CalendarClock, Camera, PlusCircle, ArrowLeft, ArrowRight } from 'lucide-react-native';
 
 //importando os estilo
-import {Cores} from '../constantes/Cores';
-import {Styles} from '../style/HomeStyle';
+import {Cores} from '../constantes/cores';
+import {Styles} from '../style/homeStyle';
 
 
 const RemediosTela: React.FC = function(){

@@ -6,8 +6,8 @@ import { Menu, Percent, Truck, CalendarClock, Camera, PlusCircle } from 'lucide-
 
 
 //importar as cores que definimos
-import {Cores} from '../constantes/Cores';
-import {Styles} from '../style/HomeStyle';
+import {cores} from '../constantes/cores';
+import {styles} from '../style/homeStyle';
 
 
 //mesmo nome do arquivo, tipo o uma funcao construtora de java
@@ -16,41 +16,41 @@ const Home: React.FC = function(){
 
     // Componente para o cabeçalho da tela
   const Header = () => (
-    <View style={Styles.headerContainer}>
+    <View style={styles.headerContainer}>
       <TouchableOpacity>
-        <Menu color={Cores.primaria} />
+        <Menu color={cores.primaria} />
       </TouchableOpacity>
-      <Text style={Styles.headerTitle}>CareHub</Text>
+      <Text style={styles.headerTitle}>CareHub</Text>
       <View style={{ width: 28 }} />
     </View>
   );
 
   // Componente para o banner principal (Clube CareHub)
   const ClubeCareHubCard = () => (
-    <View style={Styles.clubeCardContainer}>
+    <View style={styles.clubeCardContainer}>
       <ImageBackground
         source={{ uri: 'https://images.unsplash.com/photo-1576765608866-5b518682c379?q=80&w=1974&auto=format&fit=crop' }}
-        style={Styles.clubeCardBackground}
+        style={styles.clubeCardBackground}
         imageStyle={{ borderRadius: 16 }}
       >
-        <View style={Styles.clubeCardOverlay}>
-          <Text style={Styles.clubeCardTitle}>CLUBE CAREHUB</Text>
-          <Text style={Styles.clubeCardSubtitle}>MAIS PRATICIDADE E ECONOMIA PARA VOCÊ!</Text>
-          <TouchableOpacity style={Styles.clubeCardButton}>
-            <Text style={Styles.clubeCardButtonText}>ATIVE AGORA E APROVEITE</Text>
+        <View style={styles.clubeCardOverlay}>
+          <Text style={styles.clubeCardTitle}>CLUBE CAREHUB</Text>
+          <Text style={styles.clubeCardSubtitle}>MAIS PRATICIDADE E ECONOMIA PARA VOCÊ!</Text>
+          <TouchableOpacity style={styles.clubeCardButton}>
+            <Text style={styles.clubeCardButtonText}>ATIVE AGORA E APROVEITE</Text>
           </TouchableOpacity>
-          <View style={Styles.clubeFeaturesContainer}>
-            <View style={Styles.featureItem}>
-              <Percent color={Cores.branco} size={18} />
-              <Text style={Styles.featureText}>Descontos exclusivos</Text>
+          <View style={styles.clubeFeaturesContainer}>
+            <View style={styles.featureItem}>
+              <Percent color={cores.branco} size={18} />
+              <Text style={styles.featureText}>Descontos exclusivos</Text>
             </View>
-            <View style={Styles.featureItem}>
-              <Truck color={Cores.branco} size={18} />
-              <Text style={Styles.featureText}>Frete grátis parceiro</Text>
+            <View style={styles.featureItem}>
+              <Truck color={cores.branco} size={18} />
+              <Text style={styles.featureText}>Frete grátis parceiro</Text>
             </View>
-            <View style={Styles.featureItem}>
-              <CalendarClock color={Cores.branco} size={18} />
-              <Text style={Styles.featureText}>Receba com recorrência</Text>
+            <View style={styles.featureItem}>
+              <CalendarClock color={cores.branco} size={18} />
+              <Text style={styles.featureText}>Receba com recorrência</Text>
             </View>
           </View>
         </View>
@@ -60,28 +60,28 @@ const Home: React.FC = function(){
 
    // Componente para o cabeçalho de uma seção
   const SectionHeader = ({ title }: { title: string }) => (
-    <View style={Styles.sectionHeaderContainer}>
-      <Text style={Styles.sectionTitle}>{title}</Text>
+    <View style={styles.sectionHeaderContainer}>
+      <Text style={styles.sectionTitle}>{title}</Text>
       <TouchableOpacity>
-        <Camera color={Cores.secundaria} size={24} />
+        <Camera color={cores.secundaria} size={24} />
       </TouchableOpacity>
     </View>
   );
 
   // Componente para o card de "estado vazio"
   const EmptyMedicationCard = () => (
-    <View style={Styles.emptyCard}>
-        <Text style={Styles.emptyCardText}>Sem cuidados para exibir</Text>
-        <TouchableOpacity style={Styles.emptyCardButton}>
-            <PlusCircle color={Cores.primaria} size={18} style={{marginRight: 8}}/>
-            <Text style={Styles.emptyCardButtonText}>Cadastrar Cuidado</Text>
+    <View style={styles.emptyCard}>
+        <Text style={styles.emptyCardText}>Sem cuidados para exibir</Text>
+        <TouchableOpacity style={styles.emptyCardButton}>
+            <PlusCircle color={cores.primaria} size={18} style={{marginRight: 8}}/>
+            <Text style={styles.emptyCardButtonText}>Cadastrar Cuidado</Text>
         </TouchableOpacity>
     </View>
   );
 
 
     return(
-        <ScrollView style={Styles.screenContainer} showsVerticalScrollIndicator={false}>
+        <ScrollView style={styles.screenContainer} showsVerticalScrollIndicator={false}>
         <Header />
         <SectionHeader title="Próximos Cuidados" />
         <EmptyMedicationCard />
